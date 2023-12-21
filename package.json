@@ -10,8 +10,8 @@
   "scripts": {
     "prepare": "husky install",
     "----saqu-vue👇🏻----": "--------start-------",
-    "build:core": "npm run-script build --workspace @saqu-vue/core",
-    "watch:core": "npm run-script watch --workspace @saqu-vue/core",
+    "build": "npm run-script build --workspace @saqu-vue/core",
+    "watch": "npm run-script watch --workspace @saqu-vue/core",
     "version": "lerna version --force-publish=* --no-changelog --no-git-tag-version --no-push",
     "publish": "lerna publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",

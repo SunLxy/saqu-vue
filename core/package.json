@@ -1,0 +1,41 @@
+{
+  "name": "@saqu-vue/core",
+  "version": "0.0.0",
+  "description": "使用 vite 进行封装.",
+  "author": "SunLxy <1011771396@qq.com>",
+  "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "bin": {
+    "saqu": "./bin/saqu-vue"
+  },
+  "files": [
+    "lib",
+    "src",
+    "bin"
+  ],
+  "scripts": {
+    "watch": "tsbb watch src/main.ts src/scripts/index.ts",
+    "build": "tsbb build src/main.ts src/scripts/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SunLxy/saqu-vue.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^11.1.0",
+    "typescript": "^5.2.2",
+    "yargs-parser": "~21.1.1",
+    "less": "^4.2.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5",
+    "unplugin-vue-define-options": "^1.2.1",
+    "vite-plugin-dts": "^3.6.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "~11.0.1"
+  }
+}

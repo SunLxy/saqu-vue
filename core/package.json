@@ -11,7 +11,8 @@
   "files": [
     "lib",
     "src",
-    "bin"
+    "bin",
+    "ts_config"
   ],
   "scripts": {
     "watch": "tsbb watch src/main.ts src/ci.ts",
@@ -24,11 +25,8 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "chalk": "^4.1.2",
-    "chokidar": "^3.5.3",
     "fs-extra": "^11.1.0",
     "typescript": "^5.2.2",
-    "less": "^4.2.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "vite": "^4.4.5",
     "unplugin-vue-define-options": "^1.2.1",

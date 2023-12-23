@@ -1,0 +1,3 @@
+{
+  "extends": "@saqu-vue/core/ts_config/tsconfig.json"
+}

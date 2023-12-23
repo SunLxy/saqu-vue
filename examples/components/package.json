@@ -1,0 +1,26 @@
+{
+  "name": "@examples/components",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "saqu build",
+    "watch": "saqu build --watch"
+  },
+  "files": [
+    "src",
+    "lib",
+    "es"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@saqu-vue/core": "0.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.2.36"
+  }
+}

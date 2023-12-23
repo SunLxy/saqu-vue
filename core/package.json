@@ -8,6 +8,9 @@
   "bin": {
     "saqu-vue": "./bin/saqu-vue"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "lib",
     "src",

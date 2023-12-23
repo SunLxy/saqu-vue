@@ -1,6 +1,6 @@
 {
   "name": "@saqu-vue/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "使用 vite 进行封装.",
   "author": "SunLxy <1011771396@qq.com>",
   "main": "lib/main.js",
@@ -25,15 +25,15 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
     "fs-extra": "^11.1.0",
     "typescript": "^5.2.2",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5",
     "unplugin-vue-define-options": "^1.2.1",
+    "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.4"
   },
   "devDependencies": {
-    "cac": "^6.7.14",
-    "@types/fs-extra": "~11.0.1"
+    "@types/fs-extra": "~11.0.1",
+    "cac": "^6.7.14"
   }
 }

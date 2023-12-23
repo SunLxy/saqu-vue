@@ -26,6 +26,8 @@ export function cleanOptions<Options extends GlobalCLIOptions>(
   delete ret.filter;
   delete ret.m;
   delete ret.mode;
+  delete ret.input;
+  delete ret.external;
 
   // convert the sourcemap option to a boolean if necessary
   if ('sourcemap' in ret) {
@@ -34,3 +36,20 @@ export function cleanOptions<Options extends GlobalCLIOptions>(
   }
   return ret;
 }
+
+const getExternalItem = (item: string) => {
+  if (/^\^/.test(item)) {
+    return new RegExp(item);
+  }
+  return item;
+};
+
+export const handleExternal = (value: string, index: number, list: string[] | string) => {
+  if (typeof list === 'string') {
+    return [getExternalItem(list)];
+  }
+  if (Array.isArray(list)) {
+    return list.filter((ite) => typeof ite !== 'boolean').map(getExternalItem);
+  }
+  return [];
+};

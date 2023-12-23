@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "main": "lib/index.js",
-  "module": "es/index.mjs",
+  "module": "esm/index.mjs",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "saqu build",
-    "watch": "saqu build --watch"
+    "": "使用watch监听时，会照成css生成到一个输出目录中",
+    "build": "saqu build --external=vue",
+    "watch": "saqu build --watch --input=src/index.ts"
   },
   "files": [
     "src",

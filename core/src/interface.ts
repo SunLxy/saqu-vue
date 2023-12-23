@@ -14,4 +14,6 @@ export interface GlobalCLIOptions {
   m?: string;
   mode?: string;
   force?: boolean;
+  input?: string;
+  external?: (string | RegExp)[];
 }

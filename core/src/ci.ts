@@ -3,12 +3,14 @@ import { createLogger } from 'vite';
 import colors from 'picocolors';
 import { cac } from 'cac';
 import { GlobalCLIOptions } from './interface';
-import { filterDuplicateOptions, cleanOptions } from './utils';
-import { initialConfig } from './config/default';
+import { filterDuplicateOptions, cleanOptions, handleExternal } from './utils';
+import { initialConfig, initialConfigOptions } from './config/default';
 const cli = cac('saqu-vue');
 
 cli
   .command('build [root]', 'build for production')
+  .option('--input <input>', `[string] 入口文件 (default:'src/index.ts')`)
+  .option('--external <external>', `[string[]] 排除包 (default:['vue'])`, { type: [handleExternal] })
   .option('--target <target>', `[string] transpile target (default: 'modules')`)
   .option('--outDir <dir>', `[string] output directory (default: dist)`)
   .option('--assetsDir <dir>', `[string] directory under outDir to place assets in (default: assets)`)
@@ -27,7 +29,14 @@ cli
   .action(async (root: string, options: BuildOptions & GlobalCLIOptions) => {
     filterDuplicateOptions(options);
     const buildOptions: BuildOptions = cleanOptions(options);
-    const init = initialConfig();
+    const initOptions: initialConfigOptions = {};
+    if (options.input) {
+      initOptions.input = options.input;
+    }
+    if (options.external) {
+      initOptions.external = options.external;
+    }
+    const init = initialConfig(initOptions);
     try {
       await build({
         ...init,

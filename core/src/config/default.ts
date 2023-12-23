@@ -76,7 +76,7 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
         entryRoot,
         outDir: ['lib', 'esm'],
         compilerOptions: tsConfig_CompilerOptions,
-        //指定使用的 tsconfig.json
+        // 指定使用的 tsconfig.json
         ...dtsOptions,
       }),
       DefineOptions(),

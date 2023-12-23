@@ -6,7 +6,7 @@
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
   "bin": {
-    "saqu": "./bin/saqu-vue"
+    "saqu-vue": "./bin/saqu-vue"
   },
   "files": [
     "lib",

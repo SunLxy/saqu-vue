@@ -7,6 +7,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "": "使用watch监听时，会照成css生成到一个输出目录中",
+    "help": "saqu-vue build -h",
     "build": "saqu-vue build",
     "watch": "saqu-vue build --watch"
   },

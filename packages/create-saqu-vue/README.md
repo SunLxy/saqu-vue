@@ -38,7 +38,7 @@ Options:
 Example:
 
   yarn create saqu-vue create --name=app-name
-  npx create-saqu-vue --name=my-app
+  npx create-saqu-vue create --name=my-app
   npm create saqu-vue create --name=my-app
 
 Copyright 2023

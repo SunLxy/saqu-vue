@@ -1,6 +1,6 @@
 {
   "name": "@examples/components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "lib/index.js",
   "module": "esm/index.mjs",
@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@saqu-vue/core": "^0.0.3"
+    "@saqu-vue/core": "^0.0.4"
   },
   "dependencies": {
     "vue": "^3.2.36"

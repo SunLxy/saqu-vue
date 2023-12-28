@@ -17,10 +17,24 @@ const createFileSync = (path: string, content: string) => {
   FS.writeFileSync(path, content, 'utf-8');
 };
 
+/**对输入的名称进行转换*/
+const getDirName = (name: string) => {
+  // 替换 '@' 符号和 '/'
+  let newName = name.replace(/\@/g, '').replace(/\//, '-');
+  /**驼峰转换下划线*/
+  newName = newName.replace(/[A-Z]/g, (match) => {
+    return '-' + match.toLowerCase();
+  });
+  /**去除开头的下划线*/
+  return newName.replace(/^\-/, '');
+};
+
 export const createVueTemplate = (name: string) => {
-  const root = path.resolve(process.cwd(), name);
+  const dirName = getDirName(name);
+
+  const root = path.resolve(process.cwd(), dirName);
   if (FS.existsSync(root)) {
-    console.log(`${name} 文件夹已存在`);
+    console.log(`${dirName} 文件夹已存在`);
     process.exit();
   }
 

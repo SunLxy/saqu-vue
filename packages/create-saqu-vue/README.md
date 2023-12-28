@@ -1,11 +1,2 @@
-# `create-saqu-vue`
 
-> TODO: description
-
-## Usage
-
-```
-const createSaquVue = require('create-saqu-vue');
-
-// TODO: DEMONSTRATE API
-```
+快捷创建vue组件库开发

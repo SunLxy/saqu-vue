@@ -25,6 +25,7 @@ jobs:
         
     - run: npm install 
     - run: npm run build
+    - run: npm run build:create
 
     - name: Create Tag
       id: create_tag
@@ -53,6 +54,7 @@ jobs:
         body: |
           ```bash
           npm i @saqu-vue/core@${{steps.create_tag.outputs.version}}
+          npm i create-saqu-vue@${{steps.create_tag.outputs.version}}
           ```
           ${{ steps.changelog.outputs.compareurl }}
           ${{ steps.changelog.outputs.changelog }}
@@ -63,4 +65,5 @@ jobs:
         token: ${{ secrets.NPM_TOKEN }}
         workspaces: | 
           core
+          packages/create-saqu-vue
 

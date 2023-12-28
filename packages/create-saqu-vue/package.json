@@ -1,0 +1,36 @@
+{
+  "name": "create-saqu-vue",
+  "version": "0.0.2",
+  "description": "快捷创建vue组件库开发",
+  "author": "SunLxy <1011771396@qq.com>",
+  "homepage": "https://github.com/SunLxy/saqu-vue#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "bin": {
+    "create-saqu-vue": "bin/create-saqu-vue"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunLxy/saqu-vue.git"
+  },
+  "scripts": {
+    "watch": "tsbb watch src/index.ts",
+    "build": "tsbb build src/index.ts"
+  },
+  "dependencies": {
+    "yargs-parser": "~21.1.1",
+    "fs-extra": "~11.2.0"
+  },
+  "devDependencies": {
+    "@types/yargs-parser": "~21.0.0",
+    "@types/fs-extra": "~11.0.4"
+  }
+}

@@ -1,16 +1,8 @@
 import path from 'node:path';
 import FS from 'fs-extra';
-
-import {
-  getPackageJSON_text,
-  getTsConfig_text,
-  getUtils_Index_text,
-  getUtils_withInstall_text,
-  getExample_button_vue,
-  getExample_button_index,
-  getComponent_text,
-  getIndex_text,
-} from '../utils/template_text';
+import { getLib_text } from '../utils/template-lib_text';
+import { getWebsite_text } from './../utils/template-website_text';
+import { getRoot_text } from '../utils/template-root_text';
 
 const createFileSync = (path: string, content: string) => {
   FS.ensureFileSync(path);
@@ -39,15 +31,12 @@ export const createVueTemplate = (name: string) => {
   }
 
   try {
-    createFileSync(path.resolve(root, 'package.json'), getPackageJSON_text(name));
-    createFileSync(path.resolve(root, 'tsconfig.json'), getTsConfig_text());
-    createFileSync(path.resolve(root, 'src', 'utils', 'index.ts'), getUtils_Index_text());
-    createFileSync(path.resolve(root, 'src', 'utils', 'withInstall.ts'), getUtils_withInstall_text());
-    createFileSync(path.resolve(root, 'src', 'button', 'button.vue'), getExample_button_vue());
-    createFileSync(path.resolve(root, 'src', 'button', 'index.ts'), getExample_button_index());
-    createFileSync(path.resolve(root, 'src', 'component.ts'), getComponent_text());
-    createFileSync(path.resolve(root, 'src', 'index.ts'), getIndex_text());
-
+    const libData = getLib_text(name);
+    const websiteData = getWebsite_text(name);
+    const rootData = getRoot_text(name);
+    Object.entries({ ...rootData, ...libData, ...websiteData }).map(([paths, value]) => {
+      createFileSync(path.resolve(root, paths), value);
+    });
     console.log('✅ 生成vue组件库成功');
   } catch (err) {
     console.error(err);

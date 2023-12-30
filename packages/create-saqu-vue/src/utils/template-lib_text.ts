@@ -1,4 +1,4 @@
-export const getLib_text = (name: string) => ({
+export const getLib_text = (name: string, scriptVersion: string) => ({
   'core/tsconfig.json': `
 {
   "extends": "@saqu-vue/core/ts_config/tsconfig.json"
@@ -28,7 +28,7 @@ export const getLib_text = (name: string) => ({
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@saqu-vue/core": "^0.0.5"
+    "@saqu-vue/core": "^${scriptVersion}"
   },
   "dependencies": {
     "vue": "^3.2.36"

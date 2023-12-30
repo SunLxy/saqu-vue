@@ -3,6 +3,7 @@ import FS from 'fs-extra';
 import { getLib_text } from '../utils/template-lib_text';
 import { getWebsite_text } from './../utils/template-website_text';
 import { getRoot_text } from '../utils/template-root_text';
+import { node_spawn } from '../utils/spawn';
 
 const createFileSync = (path: string, content: string) => {
   FS.ensureFileSync(path);
@@ -21,7 +22,7 @@ const getDirName = (name: string) => {
   return newName.replace(/^\-/, '');
 };
 
-export const createVueTemplate = (name: string) => {
+export const createVueTemplate = async (name: string) => {
   const dirName = getDirName(name);
 
   const root = path.resolve(process.cwd(), dirName);
@@ -31,7 +32,11 @@ export const createVueTemplate = (name: string) => {
   }
 
   try {
-    const libData = getLib_text(name);
+    let scriptVersion = '0.0.5';
+    try {
+      scriptVersion = await node_spawn('npm', ['show', '@saqu-vue/core', 'version']);
+    } catch (err) {}
+    const libData = getLib_text(name, scriptVersion);
     const websiteData = getWebsite_text(name);
     const rootData = getRoot_text(name);
     Object.entries({ ...rootData, ...libData, ...websiteData }).map(([paths, value]) => {

@@ -88,8 +88,6 @@ export const transformMd = async (mdCode: string) => {
   if (importCodes.length) {
     importCodes.unshift(`import CodePreview from "@saqu-vue/plugin-remark/src/CodePreview.vue"`);
   }
-  console.log('String(file)', String(file));
-
   return {
     html: `
     <template>

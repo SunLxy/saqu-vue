@@ -1,11 +1,14 @@
 <script setup>
-import { Button } from "@examples/components"
-import "@examples/components/esm/style.css"
+import { AButton } from "@examples/components"
+import "@examples/components/esm/index.css"
+import MdContent from "./a.md"
+
 </script>
 
 <template>
   <div>
-    <Button>点击</Button>
+    <AButton>点击</AButton>
+    <MdContent />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script setup>
-import { AButton } from "@examples/components"
+// import { AButton } from "@examples/components"
 import "@examples/components/esm/index.css"
 import MdContent from "./a.md"
 
@@ -7,7 +7,7 @@ import MdContent from "./a.md"
 
 <template>
   <div>
-    <AButton>点击</AButton>
+    <!-- <AButton>点击</AButton> -->
     <MdContent />
   </div>
 </template>

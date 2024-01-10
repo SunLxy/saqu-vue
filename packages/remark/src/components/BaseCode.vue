@@ -7,7 +7,8 @@
 import { ref } from "vue"
 const props = withDefaults(
   defineProps<{
-    code: string
+    code: string,
+    lang: string,
   }>(),
   {}
 )
@@ -16,7 +17,7 @@ const visible = ref(false)
 const onVisible = () => {
   visible.value = !visible.value
 }
-
+console.log("BaseCode====props", props)
 const onCopy = () => {
   // console.log("props", decodeURIComponent(props.code))
   try {

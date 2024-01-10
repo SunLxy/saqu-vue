@@ -43,14 +43,17 @@ export const createBaseCodeHast = (codeText: string, lang: string) => {
   });
   const code = encodeURIComponent(codeText);
   return {
-    child: h('base-code', { code }, vueHast.children),
+    child: h('base-code', { code, lang }, vueHast.children),
     code,
   };
 };
 
 export const getCodePreview = (codeText: string, componentName: string) => {
   const { code, child } = createBaseCodeHast(codeText, 'vue');
-  const temp = h('code-preview', { code }, [h(componentName), h('template', { '#code': 'itemData' }, [child])]);
+  const temp = h('code-preview', { code, lang: 'vue' }, [
+    h(componentName),
+    h('template', { '#code': 'itemData' }, [child]),
+  ]);
   return temp;
 };
 

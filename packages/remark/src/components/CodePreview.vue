@@ -25,10 +25,12 @@
 import { ref } from "vue"
 const props = withDefaults(
   defineProps<{
-    code: string
+    code: string,
+    lang: string,
   }>(),
   {}
 )
+console.log("CodePreview====props", props)
 
 const visible = ref(false)
 

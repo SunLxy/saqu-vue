@@ -21,3 +21,9 @@ console.log(222)
   </div>
 </template>
 ```
+
+```json
+{
+  "a":1
+}
+```

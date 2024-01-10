@@ -4,7 +4,9 @@ import { getMetaData, getCodePreview, createFileName, createBaseCodeHast } from 
 export const handleMeta = () => {
   return (tree: Node) => {
     visit(tree, 'code', (node: any) => {
-      node.meta = `${node.lang}:::${node.meta}`;
+      const meta = (node.meta || '').trim();
+      const lang = (node.lang || '').trim();
+      node.meta = `${lang}:::${meta}`;
     });
   };
 };

@@ -135,6 +135,5 @@ pre {
 .sr-code-preview-body {
   padding: 42px 24px 50px;
   color: rgba(0, 0, 0, 0.88);
-  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
 }
 </style>

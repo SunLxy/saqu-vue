@@ -1,5 +1,5 @@
 <template>
-  <div class='sr-adaptive-theme'>
+  <div :class='["sr-adaptive-theme", props.class]' :style='props.style'>
     <button :class='copyClass' @click='onCopy'></button>
     <span class='lang'>{{ props.lang }}</span>
     <slot />
@@ -11,6 +11,8 @@ const props = withDefaults(
   defineProps<{
     code: string,
     lang: string,
+    class: string,
+    style: string
   }>(),
   {}
 )
@@ -19,12 +21,11 @@ const { onCopy, copyClass, } = useCopy(props.code)
 <style setup >
 .sr-adaptive-theme {
   position: relative;
-  background-color: #f6f6f7;
   overflow-x: auto;
-  transition: background-color .5s;
   padding: 14px;
   box-sizing: border-box;
   margin-top: 14px;
+  border-radius: 3px
 }
 
 pre {

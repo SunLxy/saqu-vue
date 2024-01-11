@@ -13,7 +13,7 @@
           <span :class='copyClass'></span>
         </div>
       </div>
-      <div ref='codeRlementRef' :style='codeStyle' class='sr-code-preview-code-html'>
+      <div ref='codeRlementRef' :style='codeStyle' :class='codeClass'>
         <slot name='code' />
       </div>
     </div>
@@ -42,6 +42,13 @@ const codeStyle = computed(() => {
     return { height: `${codeRlementRef.value.scrollHeight}px` }
   }
   return { height: 0 }
+})
+
+const codeClass = computed(() => {
+  return {
+    "sr-code-preview-code-html": true,
+    "sr-code-show": !!codeStyle.value.height
+  }
 })
 
 const onVisible = () => {
@@ -120,12 +127,13 @@ const onVisible = () => {
   user-select: none;
 }
 
-.sr-code-preview-code-html::before {
+.sr-code-preview-code-html.sr-code-show::before {
   border-top: 1px dashed rgba(5, 5, 5, 0.06);
   content: '';
   position: absolute;
   right: 0;
   left: 0;
+  z-index: 10;
 }
 
 .sr-code-preview-body {
@@ -137,6 +145,11 @@ const onVisible = () => {
   -webkit-transition: all 0.24s;
   transition: all 0.24s;
   overflow: hidden;
+}
+
+.sr-code-preview-code-html>.sr-adaptive-theme {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
 }
 
 .sr-code-box-code-action>.copied,

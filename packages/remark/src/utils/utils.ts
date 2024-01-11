@@ -20,13 +20,6 @@ const transformers: ShikijiTransformer[] = [
       addClassToHast(node, 'sr-code');
     },
   },
-  {
-    name: 'sr:clean-up',
-    pre(node) {
-      delete node.properties.tabindex;
-      delete node.properties.style;
-    },
-  },
 ];
 let count = 0;
 export const createFileName = () => {
@@ -42,8 +35,10 @@ export const createBaseCodeHast = (codeText: string, lang: string) => {
     themes: { light: 'github-light', dark: 'github-dark' },
   });
   const code = encodeURIComponent(codeText);
+  const [childItem] = vueHast.children;
+  const properties = (childItem as any).properties || {};
   return {
-    child: h('base-code', { code, lang }, vueHast.children),
+    child: h('base-code', { ...properties, code, lang }, vueHast.children),
     code,
   };
 };

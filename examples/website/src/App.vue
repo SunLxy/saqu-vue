@@ -3,10 +3,15 @@
 import "@examples/components/esm/index.css"
 import MdContent from "./a.md"
 
+const onTage = () => {
+  document.body.classList.toggle('dark')
+}
+
 </script>
 
 <template>
   <div>
+    <button @click='onTage'>切换</button>
     <!-- <AButton>点击</AButton> -->
     <MdContent />
   </div>

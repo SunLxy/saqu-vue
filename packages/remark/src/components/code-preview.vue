@@ -33,7 +33,6 @@ const props = withDefaults(
 
 const { onCopy, copyClass } = useCopy(props.code)
 
-
 const visible = ref(false)
 
 const codeRlementRef = ref()
@@ -44,12 +43,10 @@ const codeStyle = computed(() => {
   }
   return { height: 0 }
 })
-console.log("CodePreview====props", props)
 
 const onVisible = () => {
   visible.value = !visible.value
 }
-
 
 </script>
 <style setup >

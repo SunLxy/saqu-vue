@@ -1,23 +1,18 @@
 import { Node } from 'unist';
 import { visit } from 'unist-util-visit';
-import { getMetaData, getCodePreview, createFileName, createBaseCodeHast } from './utils.js';
+import { getCodePreview, createFileName, createBaseCodeHast } from './utils.js';
+
 export const handleMeta = () => {
   return (tree: Node) => {
     visit(tree, 'code', (node: any) => {
       const meta = (node.meta || '').trim();
       const lang = (node.lang || '').trim();
-      node.meta = `${lang}:::${meta}`;
-    });
-  };
-};
-export const convertMeta = () => {
-  return (tree: Node) => {
-    visit(tree, (node: any) => {
-      if (node?.data?.meta) {
-        const metaData = getMetaData(node?.data?.meta);
-        node.properties['meta'] = metaData.meta;
-        node.properties['lang'] = metaData.lang;
-      }
+      const data = node.data || (node.data = {});
+      data.meta = meta;
+      data.lang = lang;
+      const props = data.hProperties || (data.hProperties = {});
+      props.meta = meta;
+      props.lang = lang;
     });
   };
 };

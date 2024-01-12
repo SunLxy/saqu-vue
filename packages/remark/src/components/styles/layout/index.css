@@ -1,0 +1,30 @@
+.sr-layouts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.sr-layout-main-warp {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.sr-layout-main {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+}
+/* 暗主题 */
+.dark ,
+.dark .sr-layouts {
+  --sr-layouts-bg: #1b1b1f;
+  --sr-layouts-color: #e1e4e8;
+  background-color: var(--sr-layouts-bg);
+  color: var(--sr-layouts-color);
+}

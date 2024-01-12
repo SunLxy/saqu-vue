@@ -20,33 +20,5 @@ import Content from "./Content/base-content.vue"
 
 </script>
 <style setup >
-.dark {
-  --sr-layouts-bg: #1b1b1f;
-  --sr-layouts-color: #e1e4e8;
-  background-color: var(--sr-layouts-bg);
-  color: var(--sr-layouts-color);
-}
-
-.sr-layouts {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  font-size: 14px;
-}
-
-.sr-layout-main-warp {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.sr-layout-main {
-  display: flex;
-  flex-direction: row;
-  width: 1200px;
-}
+@import url("./../styles/layout/index.css");
 </style>

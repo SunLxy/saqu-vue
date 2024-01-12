@@ -11,16 +11,5 @@ const onTage = () => {
 }
 </script>
 <style setup >
-.sr-layout-head-theme {
-  position: relative;
-  z-index: 9999999;
-  height: 54px;
-  line-height: 54px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --sr-box-shadow: 0 1px 8px #454545;
-}
-
-.dark .sr-layout-head-theme {
-  box-shadow: var(--sr-box-shadow) !important;
-}
+@import url("../../styles/layout/head.css");
 </style>

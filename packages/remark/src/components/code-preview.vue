@@ -6,8 +6,8 @@
     <div class='sr-code-preview-code'>
       <div class='sr-code-preview-code-buttons'>
         <div @click='onVisible' class='sr-code-box-code-action'>
-          <img class='sr-code-expand-icon-hide' src='./assets/expand.svg' />
-          <img class='sr-code-expand-icon-show' src='./assets/unexpand.svg' />
+          <img v-if='visible' class='sr-code-expand-icon-hide' src='./assets/expand.svg' />
+          <img v-else class='sr-code-expand-icon-show' src='./assets/unexpand.svg' />
         </div>
         <div @click='onCopy' class='sr-code-box-code-action'>
           <span :class='copyClass'></span>
@@ -62,11 +62,13 @@ const onVisible = () => {
   display: inline-block;
   margin: 0 0 16px;
   background-color: #ffffff;
-  border: 1px solid rgba(5, 5, 5, 0.06);
+  border: 1px solid #e1e4e8;
   border-radius: 8px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
   width: 100%;
+  border-radius: 3px;
+  --sr-code-preview-main-bg: #1b1b1f;
+  --sr-code-preview-main-color: #e1e4e8;
+  --sr-border-color: #2e2e32;
 }
 
 .sr-code-preview-code {
@@ -83,7 +85,8 @@ const onVisible = () => {
   -webkit-justify-content: center;
   justify-content: center;
   padding: 12px 0;
-  border-top: 1px dashed rgba(5, 5, 5, 0.06);
+  border-top: 1px dashed #e1e4e8;
+  --sr-border-dashed-color: #2e2e32;
   opacity: 0.7;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -128,7 +131,8 @@ const onVisible = () => {
 }
 
 .sr-code-preview-code-html.sr-code-show::before {
-  border-top: 1px dashed rgba(5, 5, 5, 0.06);
+  border-top: 1px dashed #e1e4e8;
+  --sr-border-dashed-color: #2e2e32;
   content: '';
   position: absolute;
   right: 0;
@@ -175,5 +179,16 @@ const onVisible = () => {
 .sr-code-box-code-action>.copied {
   opacity: 1;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(1, 158, 11,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E")
+}
+
+.dark .sr-code-preview-main {
+  background-color: var(--sr-code-preview-main-bg);
+  color: var(--sr-code-preview-main-color);
+  border-color: var(--sr-border-color)
+}
+
+.dark .sr-code-preview-code-buttons,
+.dark .sr-code-preview-code-html.sr-code-show::before {
+  border-color: var(--sr-border-dashed-color);
 }
 </style>

@@ -3,6 +3,10 @@ import { transformMd } from './utils/index.js';
 export const saquVitePluginRemark = (): Plugin => {
   const mdMap = new Map<string, Record<string, string>>([]);
   const childToParent = new Map<string, string>([]);
+  /**
+   * 1. 可以增加标题模糊查询的数据存储 (怎么处理路由关系？)
+   */
+
   return {
     name: 'saqu:vite:plugin:remark',
     enforce: 'pre',
@@ -32,6 +36,7 @@ export const saquVitePluginRemark = (): Plugin => {
         if (/\.md$/.test(id)) {
           mdMap.delete(id);
           try {
+            // 这个地方在加一个标题解析的数据
             const result = await transformMd(code);
             /**存储子集对应的父级*/
             Object.entries(result.codes).forEach(([key]) => {
@@ -46,6 +51,11 @@ export const saquVitePluginRemark = (): Plugin => {
         }
         resolve();
       });
+    },
+    watchChange(id, change) {
+      if (change.event === 'delete') {
+        // 可以在这个地方进行标题数据移除
+      }
     },
   };
 };

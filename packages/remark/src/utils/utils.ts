@@ -37,6 +37,10 @@ export const createBaseCodeHast = (codeText: string, lang: string) => {
   const code = encodeURIComponent(codeText);
   const [childItem] = vueHast.children;
   const properties = (childItem as any).properties || {};
+  /**替换默认背景色*/
+  if (properties && /^background-color:#fff;/.test(properties.style)) {
+    properties.style = properties.style.replace(/^background-color:#fff;/, 'background-color:#f6f6f7;');
+  }
   return {
     child: h('base-code', { ...properties, code, lang }, vueHast.children),
     code,

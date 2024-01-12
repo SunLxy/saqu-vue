@@ -10,7 +10,25 @@
 .sr-layout-main-content-theme {
   overflow: auto;
   flex: 1;
-  padding: 14px;
+  padding: 14px 25px;
   box-sizing: border-box;
+}
+
+.sr-heading .icon-link::before {
+  content: "#";
+  position: absolute;
+  left: -20px;
+}
+
+.sr-heading>a {
+  text-decoration: none;
+  color: #e1e4e8;
+  position: relative;
+  opacity: 0;
+  transition: color .25s, opacity .25s;
+}
+
+.sr-heading:hover>a {
+  opacity: 1;
 }
 </style>

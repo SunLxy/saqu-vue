@@ -6,13 +6,14 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { StyleValue } from "vue"
 import { useCopy } from "./hooks/useCopy"
 const props = withDefaults(
   defineProps<{
     code: string,
     lang: string,
     class: string,
-    style: string
+    style: StyleValue
   }>(),
   {}
 )
@@ -25,7 +26,7 @@ const { onCopy, copyClass, } = useCopy(props.code)
   padding: 14px;
   box-sizing: border-box;
   margin-top: 14px;
-  border-radius: 3px
+  border-radius: 3px;
 }
 
 pre {
@@ -46,7 +47,7 @@ pre {
   font-size: 12px;
   font-weight: 500;
   color: rgba(60, 60, 67, .56);
-  transition: color .4s, opacity .4s;
+  transition: opacity .4s;
   opacity: 1;
 }
 

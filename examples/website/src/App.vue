@@ -13,7 +13,9 @@ const onTage = () => {
   <div>
     <button @click='onTage'>切换</button>
     <!-- <AButton>点击</AButton> -->
-    <MdContent />
+    <div style='width: 100%;height: 400px'>
+      <MdContent />
+    </div>
   </div>
 </template>
 

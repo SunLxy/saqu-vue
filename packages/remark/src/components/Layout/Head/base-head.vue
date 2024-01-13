@@ -1,7 +1,9 @@
 <template>
   <div class='sr-layout-head-theme'>
-    这是页面头部内容
-    <ThemeButton />
+    <div class='sr-layout-head-body'>
+      <div>markdown 文档</div>
+      <ThemeButton />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>

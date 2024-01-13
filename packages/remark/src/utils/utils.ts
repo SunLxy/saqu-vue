@@ -32,7 +32,10 @@ export const createBaseCodeHast = (codeText: string, lang: string) => {
   const vueHast = highlighter.codeToHast(codeText, {
     transformers,
     lang,
-    themes: { light: 'github-light', dark: 'github-dark' },
+    themes: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
   });
   const code = encodeURIComponent(codeText);
   const [childItem] = vueHast.children;

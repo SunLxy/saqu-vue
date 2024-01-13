@@ -1,7 +1,7 @@
 .sr-code-preview-main {
   --sr-code-preview-main-bg: #1b1b1f;
   --sr-code-preview-main-color: #e1e4e8;
-  --sr-border-color: #2e2e32;
+  --sr-border-color: #333333;
   position: relative;
   display: inline-block;
   margin: 0 0 16px;
@@ -17,7 +17,7 @@
 }
 
 .sr-code-preview-code-buttons {
-  --sr-border-dashed-color: #2e2e32;
+  --sr-border-dashed-color: #333333;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -72,7 +72,7 @@
 }
 
 .sr-code-preview-code-html.sr-code-show::before {
-  --sr-border-dashed-color: #2e2e32;
+  --sr-border-dashed-color: #333333;
   border-top: 1px dashed #e1e4e8;
   content: '';
   position: absolute;

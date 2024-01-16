@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<{ subMenus: Array<Object> }>(), {})
 import Head from "./Head/base-head.vue";
 import Sider from "./Sider/base-sider.vue"
 import Content from "./Content/base-content.vue"
-
+console.log(props)
 </script>
 <style setup >
 @import url("./../styles/layout/index.css");

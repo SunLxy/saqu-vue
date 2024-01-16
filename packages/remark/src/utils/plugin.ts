@@ -1,5 +1,6 @@
 import { Node } from 'unist';
 import { visit } from 'unist-util-visit';
+import { headingRank } from 'hast-util-heading-rank';
 import { getCodePreview, createFileName, createBaseCodeHast } from './utils.js';
 
 export const handleMeta = () => {
@@ -61,6 +62,21 @@ export const baseCodePlugin = () => {
           const codeText = childItem.children[0].value;
           const { child } = createBaseCodeHast(codeText, lang);
           parent.children.splice(index, 1, child);
+        }
+      }
+    });
+  };
+};
+
+/**获取子标题数据*/
+export const baseHeadingPlugin = (options: any = {}) => {
+  const { subMenusData = [] } = options;
+  return (tree: Node) => {
+    visit(tree, 'element', (node: any, index, parent) => {
+      if (headingRank(node)) {
+        const text = node.children[1]?.value;
+        if (text) {
+          subMenusData.push({ type: node.tagName, id: node.properties.id, text });
         }
       }
     });

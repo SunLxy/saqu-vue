@@ -1,12 +1,15 @@
 import type { Plugin } from 'vite';
 import { transformMd } from './utils/index.js';
-export const saquVitePluginRemark = (): Plugin => {
+import { Options } from './interface.js';
+
+export const saquVitePluginRemark = (options: Options): Plugin => {
+  const { isOnlyMd = false } = options;
+
   const mdMap = new Map<string, Record<string, string>>([]);
   const childToParent = new Map<string, string>([]);
   /**
    * 1. 可以增加标题模糊查询的数据存储 (怎么处理路由关系？)
    */
-
   return {
     name: 'saqu:vite:plugin:remark',
     enforce: 'pre',
@@ -37,14 +40,18 @@ export const saquVitePluginRemark = (): Plugin => {
           mdMap.delete(id);
           try {
             // 这个地方在加一个标题解析的数据
-            const result = await transformMd(code);
+            const result = await transformMd(code, options);
             /**存储子集对应的父级*/
             Object.entries(result.codes).forEach(([key]) => {
               childToParent.set(key, id);
             });
             /**存储数据*/
             mdMap.set(id, result.codes);
-            resolve(result.html);
+            if (isOnlyMd) {
+              resolve(result.mdVue);
+            } else {
+              resolve(result.html);
+            }
           } catch (err) {
             reject(err);
           }

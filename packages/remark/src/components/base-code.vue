@@ -6,17 +6,16 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { StyleValue } from "vue"
 import { useCopy } from "./hooks/useCopy"
-const props = withDefaults(
-  defineProps<{
-    code: string,
-    lang: string,
-    class: string,
-    style: StyleValue
-  }>(),
-  {}
-)
+import { StyleValue } from "vue"
+export interface BaseCodeProps {
+  code: string,
+  lang: string,
+  class: string,
+  style: StyleValue
+}
+
+const props = withDefaults(defineProps<BaseCodeProps>(), {})
 const { onCopy, copyClass, } = useCopy(props.code)
 </script>
 <style setup >

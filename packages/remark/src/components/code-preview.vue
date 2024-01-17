@@ -22,14 +22,12 @@
 <script lang="ts" setup>
 import { ref, computed } from "vue"
 import { useCopy } from "./hooks/useCopy"
+export interface CodePreviewProps {
+  code: string,
+  lang: string,
+}
 
-const props = withDefaults(
-  defineProps<{
-    code: string,
-    lang: string,
-  }>(),
-  {}
-)
+const props = withDefaults(defineProps<CodePreviewProps>(), {})
 
 const { onCopy, copyClass } = useCopy(props.code)
 

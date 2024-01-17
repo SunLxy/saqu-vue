@@ -1,12 +1,11 @@
 {
-  "name": "@examples/components",
+  "name": "@saqu-vue/doc-layouts",
   "version": "0.0.6",
   "description": "",
   "main": "lib/index.js",
   "module": "esm/index.mjs",
   "types": "lib/index.d.ts",
   "scripts": {
-    "help": "saqu-vue build -h",
     "build": "saqu-vue build",
     "watch": "saqu-vue build --watch"
   },

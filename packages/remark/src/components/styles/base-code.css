@@ -38,13 +38,13 @@ pre {
   z-index: 3;
   border: 1px solid #e2e2e3;
   border-radius: 4px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #f6f6f7;
   opacity: 0;
   cursor: pointer;
   background-position: 50%;
-  background-size: 20px;
+  background-size: 15px;
   background-repeat: no-repeat;
   transition: border-color .25s, background-color .25s, opacity .25s;
 }

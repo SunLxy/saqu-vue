@@ -1,7 +1,7 @@
 <template>
   <div class='sr-layouts'>
 
-    <Head />
+    <Head :title='props.title' />
     <div class='sr-layout-main-warp'>
       <div class='sr-layout-main'>
         <Sider />
@@ -17,7 +17,9 @@ import { DocLayoutProps } from "./interface"
 import Head from "./Head/base-head.vue";
 import Sider from "./Sider/base-sider.vue"
 import Content from "./Content/base-content.vue"
-const props = withDefaults(defineProps<DocLayoutProps>(), {})
+const props = withDefaults(defineProps<DocLayoutProps>(), {
+  title: "Markdown 文档"
+})
 </script>
 <style setup >
 @import url("./../styles/layout/index.css");

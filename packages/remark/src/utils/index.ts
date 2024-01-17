@@ -11,7 +11,6 @@ import { Options } from './../interface.js';
 
 export const transformMd = async (mdCode: string, options: Options) => {
   const { isOnlyMd = false } = options;
-
   const filePathToText: Record<string, string> = {};
   const importCodes: string[] = [
     `import BaseCode from "@saqu-vue/plugin-remark/src/components/base-code.vue"`,
@@ -54,7 +53,7 @@ export const transformMd = async (mdCode: string, options: Options) => {
     `,
     html: `
     <template>
-      <doc-layout :subMenus="subMenus" >
+      <doc-layout  :subMenus="subMenus" >
         ${String(file)}
       </doc-layout>
     </template>

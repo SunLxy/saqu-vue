@@ -36,8 +36,8 @@ export const codePreviewPlugin = (options: any) => {
           const line = childItem?.position?.line;
           const filePathName = createFileName();
           const codeText = childItem.children[0].value;
-          const htmlName = `demos${line}aq${count}uv`;
-          const componentName = `Demos${line}aq${count}uv`;
+          const htmlName = `demos${line}-virtually-saquv${count}`;
+          const componentName = `Demos${line}VirtuallySaquv${count}`;
           filePathToText[filePathName] = codeText;
           importCodes.push(`import ${componentName} from "${filePathName}"`);
           /**

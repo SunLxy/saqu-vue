@@ -2,7 +2,7 @@ import type { Plugin } from 'vite';
 import { transformMd } from './utils/index.js';
 import { Options } from './interface.js';
 
-export const saquVitePluginRemark = (options: Options): Plugin => {
+export const saquVitePluginRemark = (options: Options = {}): Plugin => {
   const { isOnlyMd = false } = options;
 
   const mdMap = new Map<string, Record<string, string>>([]);

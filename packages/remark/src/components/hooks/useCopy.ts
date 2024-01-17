@@ -3,7 +3,7 @@ import { ref, computed, onBeforeUnmount } from 'vue';
  * 复制代码
  */
 export const useCopy = (code: string) => {
-  let timer: number;
+  let timer: NodeJS.Timeout;
   const isCopied = ref(false);
   const copyClass = computed(() => {
     return {

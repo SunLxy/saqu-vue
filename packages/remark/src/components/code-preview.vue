@@ -54,6 +54,6 @@ const onVisible = () => {
 }
 
 </script>
-<style setup >
+<style scoped >
 @import url('./styles/code-preview.css');
 </style>

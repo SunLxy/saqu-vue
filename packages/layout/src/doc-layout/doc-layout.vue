@@ -21,6 +21,6 @@ const props = withDefaults(defineProps<DocLayoutProps>(), {
   title: "Markdown 文档"
 })
 </script>
-<style setup >
+<style scoped >
 @import url("./../styles/layout/index.css");
 </style>

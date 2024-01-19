@@ -14,6 +14,6 @@ const props = withDefaults(defineProps<HeadProps>(), {
 })
 
 </script>
-<style setup >
+<style scoped >
 @import url("../../styles/layout/head.css");
 </style>

@@ -6,6 +6,6 @@
 <script lang="ts" setup>
 
 </script>
-<style setup >
+<style scoped >
 @import url("../../styles/layout/sider.css");
 </style>

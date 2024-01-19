@@ -18,6 +18,6 @@ export interface BaseCodeProps {
 const props = withDefaults(defineProps<BaseCodeProps>(), {})
 const { onCopy, copyClass, } = useCopy(props.code)
 </script>
-<style setup >
+<style scoped >
 @import url("./styles/base-code.css");
 </style>

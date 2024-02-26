@@ -28,9 +28,26 @@ export interface initialConfigOptions {
   external?: (string | RegExp)[];
 }
 
+const getExternal = (packageData: any) => {
+  const dependencies = packageData.dependencies;
+  const devDependencies = packageData.devDependencies;
+  const peerDependencies = packageData.peerDependencies;
+  const list = Array.from(
+    new Set([
+      ...Object.keys(dependencies || {}),
+      ...Object.keys(devDependencies || {}),
+      ...Object.keys(peerDependencies || {}),
+    ]),
+  );
+  return list.map((value) => new RegExp(`^${value}`));
+};
+
 export const initialConfig = (options: initialConfigOptions = {}): InlineConfig => {
   const { input = 'src/index.ts', external = [] } = options;
   // 入口文件默认 src/index.ts
+  // 读取排除编译项
+  const packagePath = path.resolve(process.cwd(), 'package.json');
+  const packageData = FS.readJSONSync(packagePath, { encoding: 'utf8' });
 
   const entryRoot = input ? path.dirname(input) : '.';
   const dtsOptions: DtsPluginOptions = {};
@@ -44,7 +61,7 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
       minify: false,
       rollupOptions: {
         //忽略不需要打包的文件
-        external: ['vue', ...external],
+        external: ['vue', ...getExternal(packageData), ...external],
         input: input || 'src/index.ts',
         output: [
           {

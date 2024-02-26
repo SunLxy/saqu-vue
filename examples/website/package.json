@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue-router": "~4.2.5",
-    "@examples/components": "^0.0.6",
-    "vue": "^3.3.11"
+    "@examples/components": "^0.0.7",
+    "vue": "^3.3.11",
+    "vue-router": "~4.2.5"
   },
   "devDependencies": {
-    "sass": "~1.69.7",
-    "@saqu-vue/plugin-remark": "0.0.6",
+    "@saqu-vue/plugin-remark": "^0.0.7",
     "@vitejs/plugin-vue": "^4.5.2",
+    "sass": "~1.69.7",
     "vite": "^5.0.8"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@saqu-vue/doc-layouts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "lib/index.js",
   "module": "esm/index.mjs",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@saqu-vue/core": "^0.0.6"
+    "@saqu-vue/core": "^0.0.7"
   },
   "dependencies": {
     "vue": "^3.2.36"

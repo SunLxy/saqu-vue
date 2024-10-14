@@ -35,8 +35,8 @@ export const createVueTemplate = async (name: string) => {
     let scriptVersion = '0.0.5';
     try {
       scriptVersion = await node_spawn('npm', ['show', '@saqu-vue/core', 'version']);
-    } catch (err) {}
-    const libData = getLib_text(name, scriptVersion);
+    } catch (err) { }
+    const libData = getLib_text(name, `${scriptVersion}`.trim());
     const websiteData = getWebsite_text(name);
     const rootData = getRoot_text(name);
     Object.entries({ ...rootData, ...libData, ...websiteData }).map(([paths, value]) => {

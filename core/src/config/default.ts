@@ -93,7 +93,7 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
     plugins: [
       vue(),
       vueJsx(),
-      postcss({ extract: true }),
+      postcss({ extract: true }) as any,
       dts({
         entryRoot,
         outDir: ['lib', 'esm'],

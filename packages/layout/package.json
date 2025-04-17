@@ -21,6 +21,6 @@
     "@saqu-vue/core": "^0.0.7"
   },
   "dependencies": {
-    "vue": "^3.2.36"
+    "vue": "~3.2.36"
   }
 }

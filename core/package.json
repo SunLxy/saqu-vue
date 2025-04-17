@@ -28,16 +28,16 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "cac": "^6.7.14",
-    "fs-extra": "^11.1.0",
+    "@vitejs/plugin-vue": "~4.2.3",
+    "@vitejs/plugin-vue-jsx": "~3.1.0",
+    "cac": "~6.7.14",
+    "fs-extra": "~11.1.0",
     "postcss": "~8.4.32",
-    "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "^5.2.2",
-    "unplugin-vue-define-options": "^1.2.1",
-    "vite": "^4.4.5",
-    "vite-plugin-dts": "^3.6.4"
+    "rollup-plugin-postcss": "~4.0.2",
+    "typescript": "~5.2.2",
+    "unplugin-vue-define-options": "~1.2.1",
+    "vite": "~4.4.5",
+    "vite-plugin-dts": "~3.6.4"
   },
   "devDependencies": {
     "@types/fs-extra": "~11.0.1"

@@ -1,4 +1,4 @@
-import { GlobalCLIOptions } from '../interface';
+import type { GlobalCLIOptions } from '../interface';
 export const filterDuplicateOptions = <T extends object>(options: T) => {
   for (const [key, value] of Object.entries(options)) {
     if (Array.isArray(value)) {

@@ -1,3 +1,21 @@
 #!/usr/bin/env node
-
-require('../lib/ci');
+import nodeModule from 'node:module';
+// enable on-disk code caching of all modules loaded by Node.js
+// requires Nodejs >= 22.8.0
+const { enableCompileCache } = nodeModule;
+if (enableCompileCache) {
+  try {
+    enableCompileCache();
+  } catch {
+    // ignore errors
+  }
+}
+async function main() {
+  const { run } = await import('./../lib/ci.js');
+  try {
+    run();
+  } catch (err) {
+    logger.error(err);
+  }
+}
+main();

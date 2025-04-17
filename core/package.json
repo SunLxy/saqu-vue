@@ -5,6 +5,7 @@
   "author": "SunLxy <1011771396@qq.com>",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
+  "type": "module",
   "bin": {
     "saqu-vue": "./bin/saqu-vue"
   },
@@ -18,8 +19,8 @@
     "ts_config"
   ],
   "scripts": {
-    "watch": "tsbb watch src/main.ts src/ci.ts",
-    "build": "tsbb build src/main.ts src/ci.ts"
+    "watch": "tsc --watch",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -33,9 +34,8 @@
     "cac": "~6.7.14",
     "fs-extra": "~11.1.0",
     "postcss": "~8.4.32",
-    "rollup-plugin-postcss": "~4.0.2",
     "typescript": "~5.2.2",
-    "unplugin-vue-define-options": "~1.2.1",
+    "unplugin-vue-define-options": "~1.5.5",
     "vite": "~4.4.5",
     "vite-plugin-dts": "~3.6.4"
   },

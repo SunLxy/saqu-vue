@@ -6,8 +6,6 @@ import path from 'node:path';
 import FS from 'fs-extra';
 import ts from 'typescript';
 import DefineOptions from 'unplugin-vue-define-options/vite';
-import postcss from 'rollup-plugin-postcss';
-import { removeStyle } from './plugins/removeStyle';
 
 const tsConfig_CompilerOptions: ts.CompilerOptions = {
   baseUrl: '.',
@@ -93,7 +91,6 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
     plugins: [
       vue(),
       vueJsx(),
-      postcss({ extract: true }) as any,
       dts({
         entryRoot,
         outDir: ['lib', 'esm'],
@@ -102,7 +99,6 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
         ...dtsOptions,
       }),
       DefineOptions(),
-      removeStyle(),
     ],
   };
 };

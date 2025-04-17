@@ -2,7 +2,7 @@
   "name": "root",
   "author": "SunLxy <1011771396@qq.com>",
   "private": true,
-  "description": "使用 rspack 进行封装.",
+  "description": "使用 vite 进行封装.",
   "repository": {
     "type": "git",
     "url": "https://github.com/SunLxy/saqu-vue.git"

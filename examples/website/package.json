@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@examples/components": "^1.0.0",
-    "vue": "~3.3.11",
-    "vue-router": "~4.2.5"
+    "vue": "~3.5.13",
+    "vue-router": "~4.5.1"
   },
   "devDependencies": {
     "@saqu-vue/plugin-remark": "^1.0.0",

@@ -192,7 +192,7 @@ button:focus-visible {
   },
   "dependencies": {
     "${name}": "^0.0.0",
-    "vue": "^3.3.11"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",

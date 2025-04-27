@@ -31,7 +31,7 @@ export const getLib_text = (name: string, scriptVersion: string) => ({
     "@saqu-vue/core": "^${scriptVersion}"
   },
   "dependencies": {
-    "vue": "^3.2.36"
+    "vue": "^3.5.13"
   }
 }
   `,

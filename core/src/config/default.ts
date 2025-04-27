@@ -4,22 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import dts, { PluginOptions as DtsPluginOptions } from 'vite-plugin-dts';
 import path from 'node:path';
 import FS from 'fs-extra';
-import ts from 'typescript';
 import DefineOptions from 'unplugin-vue-define-options/vite';
-
-const tsConfig_CompilerOptions: ts.CompilerOptions = {
-  baseUrl: '.',
-  jsx: ts.JsxEmit.Preserve,
-  strict: true,
-  target: ts.ScriptTarget.ESNext,
-  module: ts.ModuleKind.ESNext,
-  skipLibCheck: true,
-  esModuleInterop: true,
-  moduleResolution: ts.ModuleResolutionKind.NodeNext,
-  lib: ['esnext', 'dom'],
-  resolveJsonModule: true,
-  types: ['unplugin-vue-define-options/macros-global'],
-};
 
 export interface initialConfigOptions {
   input?: string;
@@ -46,13 +31,11 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
   // 读取排除编译项
   const packagePath = path.resolve(process.cwd(), 'package.json');
   const packageData = FS.readJSONSync(packagePath, { encoding: 'utf8' });
-
   const entryRoot = input ? path.dirname(input) : '.';
   const dtsOptions: DtsPluginOptions = {};
   if (FS.existsSync(path.resolve(process.cwd(), 'tsconfig.json'))) {
-    dtsOptions.tsconfigPath = path.resolve(process.cwd(), 'tsconfig.json');
+    dtsOptions.tsconfigPath = './tsconfig.json';
   }
-
   return {
     build: {
       //压缩
@@ -93,8 +76,9 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
       vueJsx(),
       dts({
         entryRoot,
-        outDir: ['lib', 'esm'],
-        compilerOptions: tsConfig_CompilerOptions,
+        include: ['./src'],
+        exclude: ['node_modules'],
+        outDir: 'types',
         // 指定使用的 tsconfig.json
         ...dtsOptions,
       }),

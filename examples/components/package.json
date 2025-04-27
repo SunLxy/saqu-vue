@@ -4,9 +4,8 @@
   "description": "",
   "main": "lib/index.js",
   "module": "esm/index.mjs",
-  "types": "lib/index.d.ts",
+  "types": "types/index.d.ts",
   "scripts": {
-    "help": "saqu-vue build -h",
     "build": "saqu-vue build",
     "watch": "saqu-vue build --watch"
   },
@@ -19,7 +18,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@saqu-vue/core": "^0.0.8"
+    "@vitejs/plugin-vue": "~5.2.3",
+    "@vitejs/plugin-vue-jsx": "~4.1.2",
+    "cac": "~6.7.14",
+    "fs-extra": "~11.1.0",
+    "postcss": "~8.4.32",
+    "typescript": "~5.2.2",
+    "unplugin-vue-define-options": "~3.0.0-beta.10",
+    "vite": "~6.3.3",
+    "vite-plugin-dts": "~4.5.3"
   },
   "dependencies": {
     "vue": "~3.2.36"

@@ -1,6 +1,6 @@
 {
   "name": "@saqu-vue/doc-layouts",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
   "module": "esm/index.mjs",

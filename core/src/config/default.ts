@@ -78,7 +78,8 @@ export const initialConfig = (options: initialConfigOptions = {}): InlineConfig 
         entryRoot,
         include: ['./src'],
         exclude: ['node_modules'],
-        outDir: 'types',
+        // outDir: 'types',
+        outDir: ['lib', 'esm'],
         // 指定使用的 tsconfig.json
         ...dtsOptions,
       }),
